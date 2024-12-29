@@ -63,9 +63,7 @@ Open your browser and navigate to http://127.0.0.1:5000/.
 
 ![Screenshot2](https://github.com/user-attachments/assets/e3c83a52-d50c-4830-b34c-01a97c2b9d39)
 
-Query Results
-
-💡 How It Works
+## 💡 How It Works
 Enter a system prompt and user prompt on the home page.
 (Optional) Upload a .txt file to append its content to your query.
 Submit the query to get:
@@ -73,12 +71,12 @@ A formatted view of key results.
 The raw JSON output.
 Save the JSON file locally for further use.
 
-🤝 Contributing
+## 🤝 Contributing
 Contributions are always welcome! Feel free to fork the repository and submit a pull request. For major changes, please open an issue first to discuss what you'd like to change.
 
-📜 License
+## 📜 License
 This project is licensed under the MIT License. See the LICENSE file for details.
 
-❤️ Acknowledgments
+## ❤️ Acknowledgments
 Thanks to Perplexity AI for the nice API ;)
 Built with 🐍 Python and ❤️ Flask.
