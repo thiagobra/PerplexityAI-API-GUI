@@ -8,7 +8,7 @@ The app is designed to be simple, modular, and efficient.
 ### 🌟 Core Functionalities
 1. **Query the Perplexity AI API**:
    - Send customizable user and system prompts.
-   - Append uploaded `.txt` file content to the query.
+   - (Optional) Append uploaded `.txt` file content to the query.
 
 2. **File Upload**:
    - Upload `.txt` files and combine their content with your query prompt.
