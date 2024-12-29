@@ -1,6 +1,6 @@
 # 🦅 Perplexity AI Query Interface
 
-**Perplexity AI Query Interface** project! This is a quite simple Python Flask web application that lets you interact with the Perplexity AI API in a user-friendly way. 
+**Perplexity AI Query Interface** is a quite simple Python Flask web application that lets you interact with the Perplexity AI API in a user-friendly way. 
 The app is designed to be simple, modular, and efficient.
 
 ## 🚀 Features
