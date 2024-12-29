@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perplexity AI Interface</title>
+    <style>
+        body {
+            background-color: #1e1e1e;
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        .container {
+            margin: 50px auto;
+            width: 80%;
+        }
+        input, textarea, button {
+            margin: 10px;
+            padding: 10px;
+            font-size: 1.5em;
+            width: 80%;
+            color: rgb(255, 136, 0);
+            background-color: #000000;
+            border: 1px solid #555;
+        }
+        textarea {
+            height: 150px;
+        }
+        .logo {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img class="logo" src="/static/eagle_logo.png" alt="Eagle Logo" width="150">
+        <h1>Perplexity AI Interface</h1>
+        <form method="POST" action="/query" target="_blank" enctype="multipart/form-data">
+            <textarea name="system_prompt" placeholder="Enter system prompt here...">You are an AI assistant that helps people get information providing accurate results. Please provide a deeply detailed, structured, and well-researched explanation focusing on the foundational knowledge. - Begin with a brief summary of the key points - Ensure that the explanation fits these requirements: Temperature: zero (factual and neutral). Use official and reliable sources (textbooks, peer-reviewed articles, reliable sites, etc.) with citations. Confidence level: Provide a rough percentage for confidence in each claim. Structure: Consultant-style headings, subheadings, bullet points, and emojis for each topics. Always provide a short list of key points to remember when explaining complex concepts. End with three open-ended, creative, exploratory questions.</textarea><br>
+            <textarea name="prompt" placeholder="Enter your prompt here..."></textarea><br>
+            <input type="file" name="file" id="file"><br>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>

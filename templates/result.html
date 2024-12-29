@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Query Result</title>
+    <style>
+        body {
+            background-color: #1e1e1e;
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        .container {
+            margin: 50px auto;
+            width: 80%;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: #2d2d2d;
+            color: rgb(255, 136, 0);
+            margin-bottom: 20px;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #444;
+        }
+        pre {
+            background-color: #2d2d2d;
+            padding: 20px;
+            text-align: left;
+            overflow-x: auto;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+        .copy-button {
+            float: right;
+            margin-top: -40px;
+            margin-right: 10px;
+            background-color: #555;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Query Result</h1>
+        <button class="copy-button" onclick="copyToClipboard()">Copy</button>
+        
+        {% if error %}
+            <p style="color: red;">{{ error }}</p>
+        {% else %}
+            <h2>Formatted Results</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Role</th>
+                        <th>Content</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for choice in result.choices %}
+                        <tr>
+                            <td>{{ choice.message.role }}</td>
+                            <td>{{ choice.message.content }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            <h2>Raw JSON Output</h2>
+            <pre id="json-output">{{ result | tojson(indent=2) }}</pre>
+            {% if saved_file %}
+                <p>Results saved to file: <strong>{{ saved_file }}</strong></p>
+            {% endif %}
+        {% endif %}
+    </div>
+
+    <script>
+        function copyToClipboard() {
+            const output = document.getElementById('json-output').innerText;
+            navigator.clipboard.writeText(output).then(() => {
+                alert('Copied to clipboard!');
+            });
+        }
+    </script>
+</body>
+</html>
